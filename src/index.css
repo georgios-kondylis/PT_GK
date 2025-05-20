@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gap20px {@apply gap-[20px]}
+.txtShadow { text-shadow: 0 0 10px rgba(0, 0, 0, 0.468);}
+.transition1 {@apply transition-all duration-300 ease-in-out}
+.MAX_W {@apply max-w-[1440px]}
+.mainPX {@apply px-[30px] max-sm:px-[15px] }
+
+.mainDarkBg {@apply bg-[#202020]}
+
+
+.whiteText {@apply text-[#ffffff]}

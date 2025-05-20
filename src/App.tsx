@@ -1,0 +1,48 @@
+import { Route, Routes } from "react-router-dom";
+import { Navbar, MobileNavbar } from "./components/exportComponents";
+import Hero from "./components/Hero/Hero";
+import { useState, useEffect } from "react";
+import { maxSM, maxMD, maxLG } from "./reusableFuntions";
+import { useGlobalProps } from "./components/GlobalPropsProvider";
+import Chat from "./components/AI/Chat";
+
+function App() {
+  const { setMobileMenuOpen } = useGlobalProps();
+
+  // ------------------ Screen Sizes ------------------ //
+  const [smallScreen, setSmallScreen] = useState(false);
+  const [mediumScreen, setMediumScreen] = useState(false);
+  const [largeScreen, setLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isSmall = maxSM();
+      setSmallScreen(isSmall);
+      setMediumScreen(maxMD());
+      setLargeScreen(maxLG());
+
+      if (!isSmall) setMobileMenuOpen(false);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setMobileMenuOpen]);
+  // ------------------ Screen Sizes ------------------ //
+
+  return (
+    <>
+      {smallScreen ? <MobileNavbar /> : <Navbar />}
+      <Routes>
+        <Route path="/" element={<Hero />} />
+      </Routes>
+
+      <div className="fixed mainPX bottom-[60px]">
+        <Chat/>
+      </div>
+    </>
+  );
+}
+
+export default App;
