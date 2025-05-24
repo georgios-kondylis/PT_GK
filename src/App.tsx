@@ -38,8 +38,8 @@ function App() {
         <Route path="/" element={<Hero />} />
       </Routes>
 
-      <div className="fixed mainPX bottom-[60px]">
-        <Chat/>
+      <div className="fixed bottom-[60px] left-1/2 transform -translate-x-1/2 MAX_W w-full px-4 z-50">
+        <Chat />
       </div>
     </>
   );

@@ -1,9 +1,16 @@
 import React from 'react'
+import { trainingPrograms } from '../../utils'
+import { useNavigate } from 'react-router-dom'
+import PopularPrograms from '../Programs/PopularPrograms';
+import CountUp from 'react-countup';
+
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
-    <section className="bg-[url('/images/run.jpg')] bg-cover bg-center h-screen pt-[60px] mainPX text-white">
-      <div className="container mx-auto h-full flex gap20px flex-col items-center justify-center text-center">
+    <>
+    <section id='home' className="bg-[url('/images/run.jpg')] bg-cover bg-center h-screen pt-[60px] mainPX text-white">
+      <div className="MAX_W mx-auto h-full flex gap20px flex-col items-center justify-center text-center">
         <header className="text-[4rem] font-bold tracking-wide txtShadow">
           Stronger Healthier Happier
         </header>
@@ -21,8 +28,22 @@ const Hero = () => {
           </button>
         </div>
 
+        <div className="flex flex-col mt-[px]">
+          <p className='font-bold text-[20px] flex gap-[5px] items-center'>
+           
+            <img className='w-[30px]' src="/icons/cert.png" alt="" />
+             Certified Personal Trainer 
+          </p>
+          <p>
+            Trained <CountUp end={200} duration={2} delay={0.4} /> + clients
+          </p>
+
+        </div>
       </div>
     </section>
+
+   <PopularPrograms/>
+    </>
   )
 }
 

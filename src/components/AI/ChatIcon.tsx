@@ -7,7 +7,7 @@ type ChatIconProps = {
 
 const ChatIcon = ({setChatIsOpen} : ChatIconProps ) => {
   return (
-     <div className='flex items-end gap-[10px] group transition1 cursor-pointer'
+     <div className='flex w-fit items-end gap-[10px] group transition1 cursor-pointer'
           onClick={() => setChatIsOpen(true)}>
       <img className='w-[70px]' src="/icons/chat.png" alt="Chat Icon" />
       

@@ -7,14 +7,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+html { scroll-behavior: smooth;}
 
 .gap20px {@apply gap-[20px]}
 .txtShadow { text-shadow: 0 0 10px rgba(0, 0, 0, 0.468);}
 .transition1 {@apply transition-all duration-300 ease-in-out}
+.transition2 {@apply transition-all duration-700 ease-in-out}
 .MAX_W {@apply max-w-[1440px]}
 .mainPX {@apply px-[30px] max-sm:px-[15px] }
 
-.mainDarkBg {@apply bg-[#202020]}
+.mainDarkBg {@apply bg-[#151515]}
+.mainLightDarkBg {@apply bg-[#333]}
+.mainAiAnswerColor {@apply bg-[#ff5b2d]}
+.mainAiGreenTxt {@apply text-[#277c78]}
 
 
 .whiteText {@apply text-[#ffffff]}
+.darkText {@apply text-[#262626]}
+.darkText2 {@apply text-[#313131]}
