@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { navlinks } from "../../utils";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
   const [scrollDown, setScrollDown] = useState(false);
 
   useEffect(() => {
@@ -15,28 +17,32 @@ const Navbar = () => {
   }, []);
 
   return (
-   <header className={`fixed w-full flex justify-center mainPX transition2 z-50
-      ${scrollDown ? "mainDarkBg" : "bg-transparent"}`}>
+    <>
+      {location.pathname === "/" && (
+        <header className={`fixed w-full flex justify-center mainPX transition2 z-50
+          ${scrollDown ? "mainDarkBg" : "bg-transparent"}`}>
 
-      <nav className="flex items-center justify-between h-[70px] w-full MAX_W">
-        <NavLink to="/" className="whiteText flex items-center gap-[10px]">
-          <img src="/icons/sp.png" className="w-[60px]" alt="" />
-          <p className="text-[30px]">GK</p>
-        </NavLink>
+          <nav className="flex items-center justify-between h-[70px] w-full MAX_W">
+            <NavLink to="/" className="whiteText flex items-center gap-[10px]">
+              <img src="/icons/logo.png" className="w-[50px]" alt="" />
+              <p className="text-[30px]">GK</p>
+            </NavLink>
 
-        <div className="flex items-center gap-[20px]">
-          {navlinks.map((link, i) => (
-            <a key={i} href={link.scrollPoint}
-              className={`transition1 font-light text-[14px] txtShadow text-[#d2d2d2] hover:text-white hover:scale-[1.05] hover:-translate-y-[1px]`}
-            >
-              {link.name.toUpperCase()}
-            </a>
-          ))}
-        </div>
+            <div className="flex items-center gap-[20px]">
+              {navlinks.map((link, i) => (
+                <a key={i} href={link.scrollPoint}
+                  className={`transition1 font-light text-[14px] txtShadow text-[#d2d2d2] hover:text-white hover:scale-[1.05] hover:-translate-y-[1px]`}
+                >
+                  {link.name.toUpperCase()}
+                </a>
+              ))}
+            </div>
 
-        <button className="whiteText">Sign In</button>
-      </nav>
-    </header>
+            <button className="whiteText">Sign In</button>
+          </nav>
+        </header>
+      )}
+    </>
   );
 };
 

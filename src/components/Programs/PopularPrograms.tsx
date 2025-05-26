@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { popularTrainingPrograms, trainingPrograms } from '../../utils';
+import { useNavigate } from 'react-router-dom';
 
 const PopularPrograms = () => {
+  const navigate = useNavigate();
   // Store refs for each video
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
@@ -19,21 +21,22 @@ const PopularPrograms = () => {
   };
 
   return (
-    <div id='programs'>
+    <section id='programs' className='mainDarkBg text-white'>
       <header className="w-full flex flex-col items-center py-10 text-center mainPX">
-        <h1 className="font-bold text-[2rem] darkText">MOST POPULAR PROGRAMS</h1>
-        <p className="darkText2 sm:text-nowrap">
+        <h1 className="font-bold text-[2rem] py-[20px]">POPULAR PROGRAMS</h1>
+        <p className="sm:text-nowrap">
             All of our workout programs are designed for all fitness levels, <br />
             can be done at home, no gym needed and are tailored to each individual’s needs!
          </p>
       </header>
 
       <div className="mainPX MAX_W mx-auto flex flex-wrap justify-center gap-[15px] pb-10">
-        {trainingPrograms.map((program, i) => (
+        {popularTrainingPrograms.map((program, i) => (
           <div key={i}
+            onClick={() => navigate(`/programs/${encodeURIComponent(program.name)}`)}
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={() => handleMouseLeave(i)}
-            className="min-w-[220px] max-w-[260px] flex-1 w-full h-[340px] rounded-2xl shadow-lg overflow-hidden relative group cursor-pointer"
+            className="min-w-[200px] max-w-[260px] flex-1 w-full h-[340px] rounded-2xl shadow-lg overflow-hidden relative group cursor-pointer"
           >
             {/* Static background image */}
             <div className="absolute inset-0 bg-cover bg-center transition1"
@@ -61,7 +64,11 @@ const PopularPrograms = () => {
           </div>
         ))}
       </div>
-    </div>
+
+      <div className='flex w-full justify-center py-[20px]'>
+        <button className='BUTTON'> View all traning programs </button>
+      </div>
+    </section>
   );
 };
 

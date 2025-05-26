@@ -42,7 +42,7 @@ const Hero = () => {
       </div>
     </section>
 
-   <PopularPrograms/>
+    <PopularPrograms/>
     </>
   )
 }

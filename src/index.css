@@ -18,6 +18,13 @@ html { scroll-behavior: smooth;}
 
 .mainDarkBg {@apply bg-[#151515]}
 .mainLightDarkBg {@apply bg-[#333]}
+
+.BUTTON {@apply bg-[#ff5b2d] hover:bg-[#fd8240] px-[10px] py-[5px] rounded-[5px] transition1}
+
+.mainOrange {@apply bg-[#ff5b2d]}
+.hoverOrange {@apply hover:bg-[#fd8240]}
+.hoverOrangeIcon {@apply hover:text-[#fd8240]}
+
 .mainAiAnswerColor {@apply bg-[#ff5b2d]}
 .mainAiGreenTxt {@apply text-[#277c78]}
 
