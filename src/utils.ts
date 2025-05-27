@@ -124,16 +124,18 @@ export const popularTrainingPrograms = [
 
 export const reviews = [
   {
+    gender: 'female',
     name: 'Johanna',
     lastName: 'Kondyli',
     programFollowed: ['Mobility', 'Weight Loss'],
     text: 'The Mobility program helped me feel free in my movements again. I can stretch deeper and move better every day!',
     howItWas: 'Georgios was an incredible inspirator. We talked every day — even on the days I didn’t train, he was there at every step.',
-    beforeImage: '/images/reviews/before1.jpg',
-    afterImage: '/images/reviews/user1.jpg',
+    beforeImage: '/images/programs/imgs/ali.png',
+    afterImage: '/images/programs/imgs/arnold.png',
     stars: '5',
   },
   {
+    gender: 'male',
     name: 'Marcus',
     lastName: 'Andersson',
     programFollowed: ['Explosive Power'],
@@ -144,6 +146,7 @@ export const reviews = [
     stars: '4',
   },
   {
+    gender: 'female',
     name: 'Elina',
     lastName: 'Papadopoulou',
     programFollowed: ['Weight Loss'],
@@ -154,6 +157,7 @@ export const reviews = [
     stars: '5',
   },
   {
+    gender: 'male',
     name: 'Dimitris',
     lastName: 'Karalis',
     programFollowed: ['Plyometrics'],
@@ -164,6 +168,7 @@ export const reviews = [
     stars: '4',
   },
   {
+    gender: 'female',
     name: 'Sandra',
     lastName: 'Nilsson',
     programFollowed: ['Mobility', 'Explosive Power'],

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 *{
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -33,3 +34,11 @@ html { scroll-behavior: smooth;}
 .whiteText {@apply text-[#ffffff]}
 .darkText {@apply text-[#262626]}
 .darkText2 {@apply text-[#313131]}
+
+.reviewText {
+  font-family: 'Caveat', cursive;
+}
+
+.reviewText6 {
+  font-family: 'Quicksand', sans-serif;
+}
