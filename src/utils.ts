@@ -121,3 +121,57 @@ export const popularTrainingPrograms = [
     label: "/images/programs/labels/acz.png",
   },
 ];
+
+export const reviews = [
+  {
+    name: 'Johanna',
+    lastName: 'Kondyli',
+    programFollowed: ['Mobility', 'Weight Loss'],
+    text: 'The Mobility program helped me feel free in my movements again. I can stretch deeper and move better every day!',
+    howItWas: 'Georgios was an incredible inspirator. We talked every day — even on the days I didn’t train, he was there at every step.',
+    beforeImage: '/images/reviews/before1.jpg',
+    afterImage: '/images/reviews/user1.jpg',
+    stars: '5',
+  },
+  {
+    name: 'Marcus',
+    lastName: 'Andersson',
+    programFollowed: ['Explosive Power'],
+    text: 'I gained serious strength and speed without needing any equipment. The workouts were intense and fun!',
+    howItWas: 'Georgios gave constant feedback and helped push me past mental blocks. Felt like a personal coach all the way.',
+    beforeImage: '/images/reviews/before2.jpg',
+    afterImage: '/images/reviews/user2.jpg',
+    stars: '4',
+  },
+  {
+    name: 'Elina',
+    lastName: 'Papadopoulou',
+    programFollowed: ['Weight Loss'],
+    text: 'I lost weight and kept my energy up! The daily structure made it easy to stay consistent.',
+    howItWas: 'He believed in me when I didn’t. Kept me accountable and reminded me of my goals on tough days.',
+    beforeImage: '/images/reviews/before3.jpg',
+    afterImage: '/images/reviews/user3.jpg',
+    stars: '5',
+  },
+  {
+    name: 'Dimitris',
+    lastName: 'Karalis',
+    programFollowed: ['Plyometrics'],
+    text: 'I move faster, jump higher, and feel more athletic overall.',
+    howItWas: 'Georgios broke down every movement. His feedback made me aware of things I never paid attention to before.',
+    beforeImage: '/images/reviews/before4.jpg',
+    afterImage: '/images/reviews/user4.jpg',
+    stars: '4',
+  },
+  {
+    name: 'Sandra',
+    lastName: 'Nilsson',
+    programFollowed: ['Mobility', 'Explosive Power'],
+    text: 'I feel stronger, more flexible, and finally pain-free during my workouts.',
+    howItWas: 'He mixes support with real talk — always knew when to push or hold space. Game-changer.',
+    beforeImage: '/images/reviews/before5.jpg',
+    afterImage: '/images/reviews/user5.jpg',
+    stars: '5',
+  },
+];
+

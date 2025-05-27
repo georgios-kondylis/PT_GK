@@ -3,7 +3,6 @@ import { popularTrainingPrograms, trainingPrograms } from '../../utils';
 import { useNavigate } from 'react-router-dom';
 
 const PopularPrograms = () => {
-  const [displayAllPrograms, setDisplayAllPrograms] = useState<boolean>(false);
   const navigate = useNavigate();
   // Store refs for each video
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -68,7 +67,7 @@ const PopularPrograms = () => {
 
       <div className='flex w-full justify-center py-[20px]'>
         <button className='BUTTON' onClick={()=> navigate('/all-training-programs')}>
-         View all traning programs
+         See all traning programs
         </button>
       </div>
     </section>

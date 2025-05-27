@@ -20,7 +20,7 @@ const Navbar = () => {
     <>
       {location.pathname === "/" && (
         <header className={`fixed w-full flex justify-center mainPX transition2 z-50
-          ${scrollDown ? "mainDarkBg" : "bg-transparent"}`}>
+          ${scrollDown ? "mainDarkBg shadow-[0_0_10px_#070707]" : "bg-transparent"}`}>
 
           <nav className="flex items-center justify-between h-[70px] w-full MAX_W">
             <NavLink to="/" className="whiteText flex items-center gap-[10px]">
