@@ -1,48 +1,15 @@
 import React from 'react'
-import { trainingPrograms } from '../../utils'
 import { useNavigate } from 'react-router-dom'
-import PopularPrograms from '../Programs/PopularPrograms';
-import CountUp from 'react-countup';
+import { PopularPrograms, HeroTop } from '../exportComponents';
 
 
 const Hero = () => {
-  const navigate = useNavigate();
+
   return (
     <>
-    <section id='home' className="bg-[url('/images/run.jpg')] bg-cover bg-center h-screen pt-[60px] mainPX text-white">
-      <div className="MAX_W mx-auto h-full flex gap20px flex-col items-center justify-center text-center">
-        <header className="text-[4rem] font-bold tracking-wide txtShadow">
-          Stronger Healthier Happier
-        </header>
-
-        <p className="text-lg md:text-xl max-w-[600px]">
-          Ready to transform your life? Book a free consult and take the first step toward a stronger you.
-        </p>
-
-        <div className="flex gap20px justify-center">
-          <button className="bg-[#f6e0b6] text-[#2A2A2A] font-semibold px-6 py-3 rounded-2xl hover:bg-[#F2C94C] transition1">
-            Book Free Consult
-          </button>
-          <button className="bg-transparent border-[2px] border-white text-white px-6 py-3 rounded-2xl hover:bg-white hover:text-[#2A2A2A] transition1">
-            Send me DM
-          </button>
-        </div>
-
-        <div className="flex flex-col mt-[px]">
-          <p className='font-bold text-[20px] flex gap-[5px] items-center'>
-           
-            <img className='w-[30px]' src="/icons/cert.png" alt="" />
-             Certified Personal Trainer 
-          </p>
-          <p>
-            Trained <CountUp end={200} duration={2} delay={0.4} /> + clients
-          </p>
-
-        </div>
-      </div>
-    </section>
-
+    <HeroTop/>
     <PopularPrograms/>
+    {/* <Reviews /> */}
     </>
   )
 }

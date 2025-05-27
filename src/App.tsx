@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import { maxSM, maxMD, maxLG } from "./reusableFuntions";
 import { useGlobalProps } from "./components/GlobalPropsProvider";
 import Chat from "./components/AI/Chat";
-import ProgramDetails from "./components/Programs/ProgramDetails";
-
+import { ProgramDetails, Programs} from "./components/exportComponents";
 function App() {
   const { setMobileMenuOpen } = useGlobalProps();
 
@@ -37,11 +36,14 @@ function App() {
       {smallScreen ? <MobileNavbar /> : <Navbar />}
       <Routes>
         <Route path="/" element={<Hero />} />
+        <Route path="/all-training-programs" element={<Programs />} />
         <Route path="/programs/:name" element={<ProgramDetails/>} />
       </Routes>
 
-      <div className="fixed bottom-[60px] left-1/2 transform -translate-x-1/2 MAX_W w-full px-4 z-50">
-        <Chat />
+      <div className="fixed bottom-[60px] left-1/2 transform -translate-x-1/2 w-full MAX_W px-[30px] max-sm:px-[15px] z-50 pointer-events-none">
+        <div className="w-fit">
+          <Chat />
+        </div>
       </div>
     </>
   );

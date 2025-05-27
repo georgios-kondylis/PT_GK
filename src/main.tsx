@@ -20,7 +20,3 @@ createRoot(container).render(
 
 //  npm i axios
 //  npm i framer motion
-
-
-// Name: chatbot-token
-// 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

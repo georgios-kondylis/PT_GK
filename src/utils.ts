@@ -1,8 +1,8 @@
 export const navlinks = [
   { name: "Home", path: "/", scrollPoint: "#home" },
   { name: "Programs", path: "/programs", scrollPoint: "#programs" },
-  { name: "About", path: "/about", scrollPoint: "#about" },
   { name: "Reviews", path: "/reviews", scrollPoint: "#reviews" },
+  { name: "About", path: "/about", scrollPoint: "#about" },
   { name: "Contact", path: "/contact", scrollPoint: "#contact" },
 ];
 export const trainingPrograms = [
@@ -42,22 +42,22 @@ export const trainingPrograms = [
       "Improve flexibility, joint health, and recovery. Includes tailored routines with ongoing support and weekly progress updates from Georgios.",
     detailedDescription:
       "This Mobility Workout program is designed to improve your flexibility, joint health, and overall recovery so you can move better, feel better, and perform at your best, every day. It’s fully customized to your body’s needs and current limitations, making it a top choice for anyone recovering from injury or struggling with back pain, stiffness, or poor posture.With my guidance, you’ll follow step-by-step routines aimed at increasing range of motion, reducing discomfort, and boosting circulation and muscle function. It’s not just about stretching, it’s about becoming truly functional and pain-free. Weekly check-ins and ongoing support keep you on track and progressing. No equipment needed. Just commitment. And remember: if you do everything and don’t feel or see results within the promised time, you get your money back. That’s how confident I am in this. Your body is meant to move, let’s make sure it moves well.",
-
     image: "/images/programs/imgs/mobility.png",
     video: "/images/programs/videos/mobility_video.mp4",
     label: "/images/programs/labels/mobi.png",
   },
   {
     name: "Explosive Power",
+    description: 'Build raw strength and explosive speed with this no-equipment power plan. Activate fast-twitch muscles, improve coordination, and move with purpose, all from home or the gym. Perfect for athletes ready to unlock serious performance gains.',
     detailedDescription:
       "The Explosive Power program is designed to boost your speed, strength, and athletic performance, perfect for athletes or anyone who wants to move with more power. You’ll follow a tailored plan focused on fast-twitch activation, coordination, and dynamic strength, with constant check-ins, form feedback, and full support from me. No equipment needed, and everything can be done at home or in the gym. If you commit and don’t see results within the set timeframe, you get your money back. No risk. Just performance gains.",
-
     image: "/images/programs/imgs/exp.jpg",
     video: "/images/programs/videos/barPU.mp4",
     label: "/images/programs/labels/exp.png",
   },
   {
     name: "Plyometrics",
+    description: 'Unlock explosive power and move freely with this no-equipment plyometrics program. Build agility, speed, and control, perfect for athletes or anyone wanting to feel lighter, quicker, and more athletic at home or outdoors.',
     detailedDescription:
       "This Plyometrics program is all about building agility, quickness, and explosive movement, ideal for athletes or anyone looking to level up their coordination and reaction time. You’ll get a fully customized plan focused on body control, jump mechanics, and power output. With real-time feedback and daily accountability, I’ll make sure you stay consistent and progress the right way. No equipment needed, everything can be done at home or outdoors. And if you give it your all and don’t feel the results in the timeframe we set? You get your money back. No risk. Just real gains.",
     image: "/images/programs/imgs/plyometrics.png",
@@ -111,14 +111,6 @@ export const popularTrainingPrograms = [
     image: "/images/programs/imgs/mobility.png",
     video: "/images/programs/videos/mobility_video.mp4",
     label: "/images/programs/labels/mobi.png",
-  },
-  {
-    name: "Boxing",
-    description:
-      "Sharpen your technique, endurance, and mindset with combo drills, footwork, and shadowboxing routines. Includes fight conditioning and close 1-on-1 mentorship with Georgios.",
-    image: "/images/programs/imgs/ali.png",
-    video: "/images/programs/videos/box.mp4",
-    label: "/images/programs/labels/box.png",
   },
   {
     name: "Against Confort Zone",

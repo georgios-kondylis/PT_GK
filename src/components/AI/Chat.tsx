@@ -44,7 +44,7 @@ const Chat = () => {
       {!chatIsOpen && <ChatIcon setChatIsOpen={setChatIsOpen} />}
 
       {chatIsOpen && (
-        <div className="h-[500px] w-[400px] bottom-[0px] left-[30px] fixed mainDarkBg rounded-[20px] flex flex-col p-[15px] shadow-lg">
+        <div className={`h-[500px] ${loading ? 'border-mainOrange' : 'border-mainLightDark' } border-[2px] w-[400px] bottom-[0px] left-[30px] fixed mainDarkBg rounded-[20px] flex flex-col p-[15px] shadow-lg pointer-events-auto transition2`}>
           <CloseChatIcon setChatIsOpen={setChatIsOpen} />
 
          {messages.length === 0 && (
@@ -68,14 +68,14 @@ const Chat = () => {
                 {msg.role !== 'user' ? 
                   <img src="/icons/aiChatIcon.png" className="w-[40px] rounded-full" alt="" />
                  : user.name !== 'guest' ? 
-                  <div className="text-[25px] flex justify-center items-center w-[35px] h-[33px] mainLightDarkBg rounded-full">
+                  <div className="text-[25px] flex justify-center items-center w-[35px] h-[33px] bg-mainLightDark rounded-full">
                     {userName.charAt(0).toUpperCase()}
                   </div>
                  : 
                   <i className="fa-solid fa-circle-user | text-[27px] text-[#b6b6b6]"></i>
                 }
-                <div className={`w-[100%] px-[10px] py-[5px] rounded-md ${
-                    msg.role === 'user' ? 'mainLightDarkBg text-right' : 'mainAiAnswerColor text-left self-start' }`}
+                <div className={`w-[100%] px-[10px] py-[5px] rounded-md bg-mainLightDark ${
+                    msg.role === 'user' ? 'text-right' : 'text-left self-start' }`}
                 >
                   {msg.content}
                 </div>

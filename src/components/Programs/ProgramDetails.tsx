@@ -1,84 +1,87 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { trainingPrograms } from '../../utils';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { trainingPrograms } from "../../utils";
+import { useNavigate } from "react-router-dom";
+import { scrollUp } from "../../reusableFuntions";
 
 const ProgramDetails = () => {
+  scrollUp();
   const navigate = useNavigate();
   const { name } = useParams();
-  const decodedName = decodeURIComponent(name || '');
+  const decodedName = decodeURIComponent(name || "");
 
-  const program = trainingPrograms.find(p => p.name === decodedName);
+  const program = trainingPrograms.find((p) => p.name === decodedName);
 
   if (!program) {
-    return <div className="text-center py-20 text-xl font-semibold">Program not found</div>;
+    return (
+      <div className="text-center py-20 text-xl font-semibold">
+        Program not found
+      </div>
+    );
   }
 
   return (
-    <section className="mainPX MAX_W mx-auto py-10 mainDarkBg text-white">
-      <div className="mb-6">
-        <button
-          className="mainOrange hover:bg-hoverOrange font-medium px-4 py-2 rounded-[5px] shadow transition1"
-          onClick={() => navigate('/')}
-        >
-          ← Back to Programs
-        </button>
-      </div>
+    <section className="w-full mainDarkBg min-h-screen">
 
-      <header className="text-center mb-10">
-        <h1 className="text-[30px] font-bold">{program.name}</h1>
-      </header>
+      <section className="mainPX MAX_W mx-auto py-10 text-white">
+        <div className="mb-6">
+          <button className="BUTTON" onClick={() => navigate(-1)}>
+            ← Go Back
+          </button>
+        </div>
 
-      <div className="flex flex-col md:flex-row items-start gap-10">
-  {/* Media */}
-  <div className="w-full md:w-[40%] rounded-2xl overflow-hidden shadow-lg flex items-center justify-center">
-    {program.video ? (
-      <video
-        src={program.video}
-        className="w-full h-full object-cover object-center rounded-2xl"
-        controls
-        muted
-        autoPlay
-        loop
-        playsInline
-      />
-    ) : (
-      <img
-        src={program.image}
-        alt={program.name}
-        className="w-full h-[300px] object-cover rounded-2xl"
-      />
-    )}
-  </div>
+        <header className="text-center mb-10">
+          <h1 className="text-[30px] font-bold">{program.name}</h1>
+        </header>
 
+        <div className="flex flex-col md:flex-row items-start gap-10">
+          {/* Media */}
+          <div className="w-full md:w-[40%] rounded-2xl overflow-hidden shadow-lg flex items-center justify-center">
+            {program.video ? (
+              <video
+                src={program.video}
+                className="w-full h-full object-cover object-center rounded-2xl"
+                controls
+                muted
+                autoPlay
+                loop
+                playsInline
+              />
+            ) : (
+              <img
+                src={program.image}
+                alt={program.name}
+                className="w-full h-[300px] object-cover rounded-2xl"
+              />
+            )}
+          </div>
 
-        {/* Description & CTA */}
-        <div className="w-full md:w-[60%] space-y-6">
-          <p className="text-lg">
-            {program.detailedDescription}
-          </p>
+          {/* Description & CTA */}
+          <div className="w-full md:w-[60%] space-y-6">
+            <p className="text-lg">{program.detailedDescription}</p>
 
-          <p className="text-base">
-            Every body is different. Whether you're recovering from an injury,
-            or simply want to hit a new goal, weight loss, muscle building, or endurance, a
-            <strong className="font-semibold"> tailored program</strong> ensures you're not just working hard, but smart and safely.
-          </p>
+            <p className="text-base">
+              Every body is different. Whether you're recovering from an injury,
+              or simply want to hit a new goal, weight loss, muscle building, or
+              endurance, a
+              <strong className="font-semibold"> tailored program</strong> ensures
+              you're not just working hard, but smart and safely.
+            </p>
 
-          <div className="mt-6">
-            <button className="mainOrange hover:bg-hoverOrange px-6 py-3 rounded-[5px] transition duration-300">
-              Book a Free Consultation
-            </button>
+            <div className="mt-6">
+              <button className="BUTTON2 py-[50px]">
+                Book a Free Consultation
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </section>
   );
 };
 
 export default ProgramDetails;
 
-
-
-// 1explan what it is about 
-// 3 justify why they need a tailored program ex. bad knees pain in the back and every individ is diferent or have dif goals 
+// 1explan what it is about
+// 3 justify why they need a tailored program ex. bad knees pain in the back and every individ is diferent or have dif goals
 // CTA book a consultation

@@ -9,6 +9,8 @@ export default {
       colors: {
         mainOrange: '#ff5b2d',
         hoverOrange: '#fd8240',
+        mainDark: '#151515',
+        mainLightDark: '#333'
       }
     },
   },

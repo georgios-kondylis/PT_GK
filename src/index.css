@@ -19,7 +19,8 @@ html { scroll-behavior: smooth;}
 .mainDarkBg {@apply bg-[#151515]}
 .mainLightDarkBg {@apply bg-[#333]}
 
-.BUTTON {@apply bg-[#ff5b2d] hover:bg-[#fd8240] px-[10px] py-[5px] rounded-[5px] transition1}
+.BUTTON {@apply bg-mainDark border-mainLightDark hover:border-mainOrange border-[2px]  px-[10px] py-[7px] rounded-[8px] transition1}
+.BUTTON2 {@apply bg-[#ff5b2d] hover:bg-[#fd8240] px-[10px] py-[8px] rounded-[8px] transition1}
 
 .mainOrange {@apply bg-[#ff5b2d]}
 .hoverOrange {@apply hover:bg-[#fd8240]}
