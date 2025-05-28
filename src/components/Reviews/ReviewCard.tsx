@@ -1,4 +1,5 @@
 import React from 'react'
+import { AnimatePresence } from 'framer';
 
 type reviewCardProps = {
   review: {
@@ -45,9 +46,9 @@ const ReviewCard = ({review} : reviewCardProps) => {
           <div className="relative w-[50%] flex flex-col justify-between gap20px p-[30px] 
                 max-lg:w-full max-lg:gap-[30px]">
             
-            <p className="relative text-[20px] flex flex-col gap-[10px] reviewText6 italic">
+            <p className="relative text-[20px] xl:text-[24px] flex flex-col gap-[10px] reviewText6 italic">
               {review.text} <br />
-              <span className="text-[17px] font-light text-[#a7a6a6]">
+              <span className="text-[17px] xl:text-[20px] font-light text-[#a7a6a6]">
                 {review.howItWas}
               </span>
               <img className="absolute w-[35px] top-[-18px] left-[-30px]" src="/icons/qms.png" alt="" />
