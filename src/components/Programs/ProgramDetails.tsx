@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { trainingPrograms } from "../../utils";
+import { trainingPrograms } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
-import { scrollUp } from "../../reusableFuntions";
+import { scrollUp } from "../../utils/reusableFuntions";
 
 const ProgramDetails = () => {
   scrollUp();
@@ -22,7 +22,6 @@ const ProgramDetails = () => {
 
   return (
     <section className="w-full mainDarkBg min-h-screen">
-
       <section className="mainPX MAX_W mx-auto py-10 text-white">
         <div className="mb-6">
           <button className="BUTTON" onClick={() => navigate(-1)}>
@@ -64,8 +63,8 @@ const ProgramDetails = () => {
               Every body is different. Whether you're recovering from an injury,
               or simply want to hit a new goal, weight loss, muscle building, or
               endurance, a
-              <strong className="font-semibold"> tailored program</strong> ensures
-              you're not just working hard, but smart and safely.
+              <strong className="font-semibold"> tailored program</strong>{" "}
+              ensures you're not just working hard, but smart and safely.
             </p>
 
             <div className="mt-6">

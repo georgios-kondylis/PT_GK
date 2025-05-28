@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ChatIcon from './ChatIcon';
 import CloseChatIcon from './MicroUI.tsx/CloseChatIcon';
-import { getAiReply } from '../../fakeAI';
+import { getAiReply } from '../../utils/fakeAI';
 
 // Types
 type Message = {

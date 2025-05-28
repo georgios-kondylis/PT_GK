@@ -141,8 +141,8 @@ export const reviews = [
     programFollowed: ['Explosive Power'],
     text: 'I gained serious strength and speed without needing any equipment. The workouts were intense and fun!',
     howItWas: 'Georgios gave constant feedback and helped push me past mental blocks. Felt like a personal coach all the way.',
-    beforeImage: '/images/reviews/before2.jpg',
-    afterImage: '/images/reviews/user2.jpg',
+    beforeImage: '/before_after/b.jpg',
+    afterImage: '/before_after/a.jpg',
     stars: '4',
   },
   {

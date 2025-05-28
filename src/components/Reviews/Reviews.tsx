@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { reviews } from "../../utils";
+import { reviews } from "../../utils/utils";
 import ReviewCard from "./ReviewCard";
 import { AnimatePresence, motion, Variant, Variants } from "framer-motion";
 
@@ -40,19 +40,22 @@ const Reviews = () => {
   };
 
   return (
-    <section id="reviews" className="text-white bg-[url('/images/grafBg.png')] bg-cover bg-center w-full py-[30px]">
+    <section
+      id="reviews"
+      className="text-white mainDarkBg bg-cover bg-center w-full py-[30px]"
+    >
       <div className="flex flex-col MAX_W mainPX">
         <header className="font-bold text-[2rem] py-[20px] mx-auto">
           AMAZING SUCCESS STORIES
         </header>
 
         <div className="flex gap-4 justify-between items-center relative min-h-[300px]">
-         
-          <i onClick={handlePrev}
+          <i
+            onClick={handlePrev}
             className="fa-solid fa-circle-arrow-left
             text-[40px] rounded-full transition1 cursor-pointer z-10 bg-[#151515] hover:scale-[1.1] hover:text-[#d1d1d1]
-             max-sm:absolute left-0 top-[30%]">
-          </i>
+             max-sm:absolute left-0 top-[30%]"
+          ></i>
 
           <div className="w-full flex justify-center relative overflow-hidden">
             <AnimatePresence custom={direction} mode="wait">
@@ -69,11 +72,12 @@ const Reviews = () => {
             </AnimatePresence>
           </div>
 
-          <i onClick={handleNext}
+          <i
+            onClick={handleNext}
             className="fa-solid fa-circle-arrow-right
             text-[40px] rounded-full transition1 cursor-pointer z-10 bg-[#151515] hover:scale-[1.1] hover:text-[#d1d1d1]
-            max-sm:absolute right-0 top-[30%]">
-          </i>
+            max-sm:absolute right-0 top-[30%]"
+          ></i>
         </div>
       </div>
     </section>
