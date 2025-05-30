@@ -5,6 +5,7 @@ export const navlinks = [
   { name: "About", path: "/about", scrollPoint: "#about" },
   { name: "Contact", path: "/contact", scrollPoint: "#contact" },
 ];
+
 export const trainingPrograms = [
   {
     name: "Weight Loss",
@@ -48,7 +49,8 @@ export const trainingPrograms = [
   },
   {
     name: "Explosive Power",
-    description: 'Build raw strength and explosive speed with this no-equipment power plan. Activate fast-twitch muscles, improve coordination, and move with purpose, all from home or the gym. Perfect for athletes ready to unlock serious performance gains.',
+    description:
+      "Build raw strength and explosive speed with this no-equipment power plan. Activate fast-twitch muscles, improve coordination, and move with purpose, all from home or the gym. Perfect for athletes ready to unlock serious performance gains.",
     detailedDescription:
       "The Explosive Power program is designed to boost your speed, strength, and athletic performance, perfect for athletes or anyone who wants to move with more power. You’ll follow a tailored plan focused on fast-twitch activation, coordination, and dynamic strength, with constant check-ins, form feedback, and full support from me. No equipment needed, and everything can be done at home or in the gym. If you commit and don’t see results within the set timeframe, you get your money back. No risk. Just performance gains.",
     image: "/images/programs/imgs/exp.jpg",
@@ -57,7 +59,8 @@ export const trainingPrograms = [
   },
   {
     name: "Plyometrics",
-    description: 'Unlock explosive power and move freely with this no-equipment plyometrics program. Build agility, speed, and control, perfect for athletes or anyone wanting to feel lighter, quicker, and more athletic at home or outdoors.',
+    description:
+      "Unlock explosive power and move freely with this no-equipment plyometrics program. Build agility, speed, and control, perfect for athletes or anyone wanting to feel lighter, quicker, and more athletic at home or outdoors.",
     detailedDescription:
       "This Plyometrics program is all about building agility, quickness, and explosive movement, ideal for athletes or anyone looking to level up their coordination and reaction time. You’ll get a fully customized plan focused on body control, jump mechanics, and power output. With real-time feedback and daily accountability, I’ll make sure you stay consistent and progress the right way. No equipment needed, everything can be done at home or outdoors. And if you give it your all and don’t feel the results in the timeframe we set? You get your money back. No risk. Just real gains.",
     image: "/images/programs/imgs/plyometrics.png",
@@ -124,59 +127,44 @@ export const popularTrainingPrograms = [
 
 export const reviews = [
   {
-    gender: 'female',
-    name: 'Johanna',
-    lastName: 'Kondyli',
-    programFollowed: ['Mobility', 'Weight Loss'],
-    text: 'The Mobility program helped me feel free in my movements again. I can stretch deeper and move better every day!',
-    howItWas: 'Georgios was an incredible inspirator. We talked every day, even on the days I didn’t train, he was there at every step.',
-    beforeImage: '/before_after/bef.jpg',
-    afterImage: '/before_after/after.jpg',
-    stars: '5',
+    gender: "female",
+    name: "Johanna",
+    lastName: "Kondyli",
+    programFollowed: ["Mobility", "Weight Loss"],
+    text: "The Mobility program helped me feel free in my movements again. I can stretch deeper and move better every day!",
+    howItWas:
+      "Georgios was an incredible inspirator. We talked every day, even on the days I didn’t train, he was there at every step.",
+    beforeImage: "/before_after/bef.jpg",
+    afterImage: "/before_after/after.jpg",
+    stars: "5",
   },
   {
-    gender: 'male',
-    name: 'Marcus',
-    lastName: 'Andersson',
-    programFollowed: ['Explosive Power'],
-    text: 'I gained serious strength and speed without needing any equipment. The workouts were intense and fun!',
-    howItWas: 'Georgios gave constant feedback and helped push me past mental blocks. Felt like a personal coach all the way.',
-    beforeImage: '/before_after/b.jpg',
-    afterImage: '/before_after/a.jpg',
-    stars: '4',
+    gender: "Male",
+    name: "James",
+    lastName: "Andersson",
+    programFollowed: ["Weight Loss", "Explosive Power"],
+    text: "Dropping the extra kilos while gaining explosive strength was something I never thought possible. This program changed my life!",
+    howItWas:
+      "Georgios kept me accountable every single day. His motivation and knowledge made all the difference, it felt like I had a coach in my pocket 24/7.",
+    beforeImage: "/before_after/befo.png",
+    afterImage: "/before_after/aft.png",
+    stars: "5",
   },
   {
-    gender: 'female',
-    name: 'Elina',
-    lastName: 'Papadopoulou',
-    programFollowed: ['Weight Loss'],
-    text: 'I lost weight and kept my energy up! The daily structure made it easy to stay consistent.',
-    howItWas: 'He believed in me when I didn’t. Kept me accountable and reminded me of my goals on tough days.',
-    beforeImage: '/images/reviews/before3.jpg',
-    afterImage: '/images/reviews/user3.jpg',
-    stars: '5',
-  },
-  {
-    gender: 'male',
-    name: 'Dimitris',
-    lastName: 'Karalis',
-    programFollowed: ['Plyometrics'],
-    text: 'I move faster, jump higher, and feel more athletic overall.',
-    howItWas: 'Georgios broke down every movement. His feedback made me aware of things I never paid attention to before.',
-    beforeImage: '/images/reviews/before4.jpg',
-    afterImage: '/images/reviews/user4.jpg',
-    stars: '4',
-  },
-  {
-    gender: 'female',
-    name: 'Sandra',
-    lastName: 'Nilsson',
-    programFollowed: ['Mobility', 'Explosive Power'],
-    text: 'I feel stronger, more flexible, and finally pain-free during my workouts.',
-    howItWas: 'He mixes support with real talk, always knew when to push or hold space. Game changer.',
-    beforeImage: '/images/reviews/before5.jpg',
-    afterImage: '/images/reviews/user5.jpg',
-    stars: '5',
+    gender: "male",
+    name: "Marcus",
+    lastName: "Andersson",
+    programFollowed: ["Explosive Power"],
+    text: "I gained serious strength and speed without needing any equipment. The workouts were intense and fun!",
+    howItWas:
+      "Georgios gave constant feedback and helped push me past mental blocks. Felt like a personal coach all the way.",
+    beforeImage: "/before_after/b.jpg",
+    afterImage: "/before_after/a.jpg",
+    stars: "4",
   },
 ];
-
+export const AboutMeText = `Hey, I'm Georgios, certified personal trainer.
+With over 10 years of experience in combat sports, weightlifting, plyometrics, mobility, speed, and explosive training, I’ve worked with everyone: top-level athletes, older adults rebuilding their movement, and kids finding their confidence.
+My training philosophy is simple no matter your goal, the focus should always be on staying functional, healthy, and injury-free. Training should be sustainable, fun, and something you actually look forward to, not just another chore.
+My goal? To help you become the strongest, fastest, most mobile version of yourself, without overcomplicating things. I keep it real, I show up, and I’ve got your back every step of the way.
+Whether you're just starting out or pushing for elite performance, I’ll meet you where you're at, and we’ll level up together. Let’s go.`;

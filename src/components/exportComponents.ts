@@ -6,6 +6,8 @@ import PopularPrograms from "./Programs/PopularPrograms";
 import Hero from "./Hero/Hero";
 import HeroTop from "./Hero/HeroTop";
 import Reviews from "./Reviews/Reviews";
+import TestHeadless from "./Reviews/TestHeadless";
+import About from "./About/About";
 
 export {
   Navbar,
@@ -13,6 +15,9 @@ export {
   ProgramDetails,
   PopularPrograms,
   Programs,
+  Hero,
   HeroTop,
   Reviews,
+  TestHeadless,
+  About,
 };

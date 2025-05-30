@@ -1,5 +1,6 @@
 import React from 'react'
 import { AnimatePresence } from 'framer';
+import { Skeleton } from '@mui/material';
 
 type reviewCardProps = {
   review: {
@@ -31,6 +32,7 @@ const ReviewCard = ({review} : reviewCardProps) => {
           <div className="flex gap-[10px] w-[50%] max-lg:w-full">
             {[{ src: review.beforeImage, label: "Before" }, { src: review.afterImage, label: "After" }].map((img, idx) => (
               <div key={idx} className="relative flex-1 aspect-[3/5]">
+                
                 <img src={img.src} alt={img.label}
                   className="w-full h-full object-cover object-center rounded-[7px]"
                 />

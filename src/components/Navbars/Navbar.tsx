@@ -28,15 +28,14 @@ const Navbar = () => {
           }`}
         >
           <nav className="flex items-center justify-between h-[70px] w-full MAX_W">
-            <NavLink to="/" className="whiteText flex items-center gap-[10px]">
+            <NavLink to="/" className="whiteText flex items-center gap-[2px]">
               <img src="/icons/logo.png" className="w-[50px]" alt="" />
-              <p className="text-[30px]">GK</p>
+              <img className="w-[250px]" src="/images/mw.png" alt="" />
             </NavLink>
 
-            <div className="flex items-center gap-[20px]">
+            <div className="absolute left-1/2 -translate-x-1/2  flex items-center gap-[20px]">
               {navlinks.map((link, i) => (
-                <a
-                  key={i}
+                <a key={i}
                   href={link.scrollPoint}
                   className={`transition1 font-light text-[14px] txtShadow text-[#d2d2d2] hover:text-white hover:scale-[1.05] hover:-translate-y-[1px]`}
                 >

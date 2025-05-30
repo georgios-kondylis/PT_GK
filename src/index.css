@@ -42,3 +42,18 @@ html { scroll-behavior: smooth;}
 .reviewText6 {
   font-family: 'Quicksand', sans-serif;
 }
+
+.mainButton {
+  background: linear-gradient(to right, #fb9200, #e66000, #e84904, #e66000, #fb9200);
+  background-size: 200%;
+  background-position: 0%;
+  transition: background-position 0.4s ease-in-out;
+  color: white; 
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.839);
+  cursor: pointer;
+}
+
+.mainButton:hover {
+  background-position: 100%;
+}
+

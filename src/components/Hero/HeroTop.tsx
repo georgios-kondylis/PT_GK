@@ -3,13 +3,13 @@ import CountUp from 'react-countup';
 
 const HeroTop = () => {
   return (
-    <section id='home' className="bg-[url('/images/run.jpg')] bg-cover bg-center h-screen pt-[60px] mainPX text-white">
+    <section id='home' className="bg-[url('/images/bg.png')] bg-cover bg-center h-screen pt-[60px] mainPX text-white">
       <div className="MAX_W mx-auto h-full flex gap20px flex-col items-center justify-center text-center">
         <header className="text-[4rem] font-bold tracking-wide txtShadow">
           Stronger Healthier Happier
         </header>
 
-        <p className="text-lg md:text-xl max-w-[600px]">
+        <p className="text-lg md:text-xl max-w-[600px] txtShadow">
           Ready to transform your life? Book a free consult and take the first step toward a stronger you.
         </p>
 
