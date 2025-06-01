@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { navlinks } from "../../utils/utils";
 import { useLocation } from "react-router-dom";
+import MainButton from "../UI/MainButton";
 
 const Navbar = () => {
   const location = useLocation();
@@ -21,8 +22,7 @@ const Navbar = () => {
       {location.pathname === "/" && (
         <header
           className={`fixed w-full flex justify-center mainPX transition2 z-50
-          ${
-            scrollDown
+          ${ scrollDown
               ? "mainDarkBg shadow-[0_0_10px_#070707]"
               : "bg-transparent"
           }`}
@@ -30,7 +30,7 @@ const Navbar = () => {
           <nav className="flex items-center justify-between h-[70px] w-full MAX_W">
             <NavLink to="/" className="whiteText flex items-center gap-[2px]">
               <img src="/icons/logo.png" className="w-[50px]" alt="" />
-              <img className="w-[250px]" src="/images/mw.png" alt="" />
+              <img className="w-[250px] mb-[3px]" src="/images/mw.png" alt="" />
             </NavLink>
 
             <div className="absolute left-1/2 -translate-x-1/2  flex items-center gap-[20px]">
@@ -44,7 +44,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            <button className="whiteText">Sign In</button>
+            <MainButton size="medium">Sign In</MainButton>
           </nav>
         </header>
       )}

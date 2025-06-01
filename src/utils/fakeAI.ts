@@ -134,7 +134,7 @@ if (
 if (
   /(how|where)\s*(do|can)?\s*(i)?\s*(book|schedule|sign\s*up|join|get\s*(started|in\s*)?)/i.test(userInput)
 ) {
-  return "You can book a session with Georgios by messaging him on Instagram or LinkedIn, or dropping an email 📩. He's open for both online and in-person training! 💪";
+  return "You can book a session with Georgios by messaging him directly on his phone: 076 901 8014 or on Social platforms like instagram, by dropping an email 📩 or by filling the form, you can find all the info in the contact section at the bottom of the webpage. He's open for both online and in-person training! 💪";
 }
 
 // How to contact / Reach / Talk to Georgios

@@ -9,7 +9,7 @@ type MainButtonProps = {
 
 const sizeClasses = {
   small: 'px-3 py-1 text-sm rounded-[4px]',
-  medium: 'px-4 py-2 text-base rounded-[7px]',
+  medium: 'px-4 py-[7px] text-base rounded-[7px]',
   large: 'px-6 py-3 text-lg rounded-[9px]',
 }
 

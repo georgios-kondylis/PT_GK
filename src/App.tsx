@@ -40,11 +40,11 @@ function App() {
         <Route path="/programs/:name" element={<ProgramDetails />} />
       </Routes>
 
-      {/* <div className="fixed bottom-[60px] left-1/2 transform -translate-x-1/2 w-full MAX_W px-[30px] max-sm:px-[15px] z-50 pointer-events-none">
+      <div className="fixed bottom-[60px] left-1/2 transform -translate-x-1/2 w-full MAX_W px-[30px] max-sm:px-[15px] z-50 pointer-events-none">
         <div className="w-fit">
           <Chat />
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

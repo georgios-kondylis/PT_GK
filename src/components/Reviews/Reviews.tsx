@@ -45,7 +45,7 @@ const Reviews = () => {
       className="text-white mainDarkBg bg-cover bg-center w-full py-[30px]"
     >
       <div className="flex flex-col MAX_W mainPX mx-auto">
-        <header className="font-bold text-[2rem] py-[20px] mx-auto">
+        <header className="headerStyles">
           AMAZING SUCCESS STORIES
         </header>
 

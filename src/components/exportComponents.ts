@@ -8,6 +8,7 @@ import HeroTop from "./Hero/HeroTop";
 import Reviews from "./Reviews/Reviews";
 import TestHeadless from "./Reviews/TestHeadless";
 import About from "./About/About";
+import Contact from "./Contact/Contact";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   Reviews,
   TestHeadless,
   About,
+  Contact,
 };

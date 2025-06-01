@@ -3,7 +3,7 @@ import { AboutMeText } from '../../utils/utils';
 
 const About = () => {
   return (
-    <section id='about' className="w-full mainDarkBg text-white py-10 mainPX">
+    <section id='about' className="w-full mainDarkBg text-white py-10 pt-[100px] mainPX">
       <div className="mx-auto w-full MAX_W flex flex-col lg:flex-row gap-6 items-center md:items-start">
 
         {/* Text Section */}

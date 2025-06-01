@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { PopularPrograms, HeroTop, Reviews, About} from '../exportComponents';
+import { PopularPrograms, HeroTop, Reviews, About, Contact} from '../exportComponents';
 
 
 
@@ -13,7 +13,7 @@ const Hero = () => {
     {/* <NeutritionGuide /> */}
     <Reviews />
     <About />
-    {/* <Contact /> */}
+    <Contact />
     </>
   )
 }

@@ -19,6 +19,14 @@ html { scroll-behavior: smooth;}
 
 .mainDarkBg {@apply bg-[#151515]}
 .mainLightDarkBg {@apply bg-[#333]}
+.fireBG { background: linear-gradient(to right, #fb9200, #e66000, #e84904, #e66000, #fb9200);
+  background-size: 200%;
+  background-position: 0%;
+  transition: background-position 0.4s ease-in-out;
+  color: white; 
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.839);
+  cursor: pointer;}
+.fireBG:hover { background-position: 100%;}
 
 .BUTTON {@apply bg-mainDark border-mainLightDark hover:border-mainOrange border-[2px]  px-[10px] py-[7px] rounded-[8px] transition1}
 .BUTTON2 {@apply bg-[#ff5b2d] hover:bg-[#fd8240] px-[10px] py-[8px] rounded-[8px] transition1}
@@ -35,13 +43,8 @@ html { scroll-behavior: smooth;}
 .darkText {@apply text-[#262626]}
 .darkText2 {@apply text-[#313131]}
 
-.reviewText {
-  font-family: 'Caveat', cursive;
-}
-
-.reviewText6 {
-  font-family: 'Quicksand', sans-serif;
-}
+.reviewText { font-family: 'Caveat', cursive;}
+.reviewText6 {  font-family: 'Quicksand', sans-serif;}
 
 .mainButton {
   background: linear-gradient(to right, #fb9200, #e66000, #e84904, #e66000, #fb9200);
@@ -52,8 +55,16 @@ html { scroll-behavior: smooth;}
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.839);
   cursor: pointer;
 }
+.mainButton:hover { background-position: 100%;}
 
-.mainButton:hover {
-  background-position: 100%;
+.INPUT { @apply mainLightDarkBg outline-none text-white p-3 rounded-md w-full}
+.SOCIAL {@apply flex items-center justify-center w-[40px] h-[40px] rounded-full text-[20px] hover:text-[22px] transition1}
+.SOCIAL {
+ background: linear-gradient(to right, #fb9200, #e66000, #e84904, #e66000, #fb9200);
+ background-size: 200%;
+ background-position: 0%;
 }
+.SOCIAL:hover {background-position: 100%;}
 
+.caligraphy { font-family: 'Marck Script', cursive;}
+.headerStyles { @apply font-bold text-[2rem] py-[20px] mt-[30px] mx-auto}

@@ -23,7 +23,7 @@ const ReviewCard = ({review} : reviewCardProps) => {
      <div className="flex flex-col gap20px">
         {/* NAME */}
         <div className="flex items-center gap20px">
-          <h1 className="text-[2rem]">{review.name}</h1>
+          <h1 className="text-[2.3rem] px-2 caligraphy">{review.name}</h1>
           <span className="w-full h-[2px] rounded-full bg-white"></span>
         </div>
 

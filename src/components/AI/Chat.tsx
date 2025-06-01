@@ -93,7 +93,7 @@ const Chat = () => {
               className="flex-1 p-2 rounded-md bg-[#2a2a2a] text-white outline-none"
               placeholder="Ask me anything..."
             />
-            <button onClick={handleSend} className="mainAiAnswerColor px-4 py-2 rounded-md text-white hoverOrange transition">
+            <button onClick={handleSend} className=" fireBG px-4 py-2 rounded-md text-white hoverOrange transition">
               Send
             </button>
           </div>

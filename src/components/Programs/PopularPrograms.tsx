@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { popularTrainingPrograms, trainingPrograms } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
+import MainButton from "../UI/MainButton";
 
 const PopularPrograms = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const PopularPrograms = () => {
   return (
     <section id="programs" className="mainDarkBg text-white">
       <header className="w-full flex flex-col items-center py-10 text-center mainPX">
-        <h1 className="font-bold text-[2rem] py-[20px]">POPULAR PROGRAMS</h1>
+        <h1 className="headerStyles">POPULAR PROGRAMS</h1>
         <p className="sm:text-nowrap">
           All of our workout programs are designed for all fitness levels,{" "}
           <br />
@@ -72,11 +73,11 @@ const PopularPrograms = () => {
       </div>
 
       <div className="flex w-full justify-center py-[20px]">
-        <button className="BUTTON"
+        <MainButton size="medium" className=""
           onClick={() => navigate("/all-training-programs")}
         >
           See all traning programs
-        </button>
+        </MainButton>
       </div>
     </section>
   );

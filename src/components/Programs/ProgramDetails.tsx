@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { trainingPrograms } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
 import { scrollUp } from "../../utils/reusableFuntions";
+import MainButton from "../UI/MainButton";
 
 const ProgramDetails = () => {
   scrollUp();
@@ -24,9 +25,10 @@ const ProgramDetails = () => {
     <section className="w-full mainDarkBg min-h-screen">
       <section className="mainPX MAX_W mx-auto py-10 text-white">
         <div className="mb-6">
-          <button className="BUTTON" onClick={() => navigate(-1)}>
-            ← Go Back
-          </button>
+         <MainButton size="medium" className="flex items-center gap-2" onClick={() => navigate(-1)}>
+            <i className="fa-solid fa-arrow-left"></i>
+            <p>Go Back</p>
+          </MainButton>
         </div>
 
         <header className="text-center mb-10">
@@ -68,9 +70,9 @@ const ProgramDetails = () => {
             </p>
 
             <div className="mt-6">
-              <button className="BUTTON2 py-[50px]">
+              <MainButton size="medium" className="BUTTON2 py-[50px]">
                 Book a Free Consultation
-              </button>
+              </MainButton>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { trainingPrograms } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
+import MainButton from "../UI/MainButton";
 
 const Programs = () => {
   // Store refs for each video
@@ -25,15 +26,16 @@ const Programs = () => {
   return (
     <section className="mainDarkBg text-white">
       <div id="GO_BACK" className="flex w-full justify-start p-[30px]">
-        <button className="BUTTON" onClick={() => navigate(-1)}>
-          ← Go Back
-        </button>
+        <MainButton size="medium" className="flex items-center gap-2" onClick={() => navigate(-1)}>
+          <i className="fa-solid fa-arrow-left"></i>
+          <p>Go Back</p>
+        </MainButton>
       </div>
 
-      <header className="w-full flex flex-col items-center pb-10 text-center">
+      <header className="w-full flex flex-col items-center pb-10 gap-3 text-center">
         <h1 className="font-bold text-[2rem]">TRAINING PROGRAMS</h1>
         <p className="max-w-[500px]">
-          All of our workout programs can be done at home, NO gym required!
+          Every training program is thoughtfully tailored to each individual's unique strengths, goals, and areas for improvement, <br />ensuring a truly personalized fitness experience.
         </p>
       </header>
 
