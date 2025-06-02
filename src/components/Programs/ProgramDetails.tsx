@@ -49,9 +49,7 @@ const ProgramDetails = () => {
                 playsInline
               />
             ) : (
-              <img
-                src={program.image}
-                alt={program.name}
+              <img src={program.image} alt={program.name}
                 className="w-full h-[300px] object-cover rounded-2xl"
               />
             )}
@@ -70,7 +68,7 @@ const ProgramDetails = () => {
             </p>
 
             <div className="mt-6">
-              <MainButton size="medium" className="BUTTON2 py-[50px]">
+              <MainButton onClick={() => navigate('/')} size="medium" className="BUTTON2 py-[50px]">
                 Book a Free Consultation
               </MainButton>
             </div>
