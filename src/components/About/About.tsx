@@ -5,13 +5,27 @@ const About = () => {
   return (
     <section id='about' className="w-full mainDarkBg text-white py-10 pt-[100px] mainPX">
       <div className="mx-auto w-full MAX_W flex flex-col lg:flex-row gap-6 items-center md:items-start">
-
+        
         {/* Text Section */}
         <div className="w-full md:flex-1">
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
-          <p className="md:text-lg lg:text-2xl md:leading-relaxed">
-           {AboutMeText}
-          </p> 
+          <div className='w-full flex flex-row-reverse items-center gap-5 pb-[20px]'>
+            <p className='text-nowrap text-[2.3rem] px-2 caligraphy'>About Me</p>
+            <span className='h-[2px] rounded-full w-full bg-white'></span>
+          </div>
+
+          <p className="md:text-lg md:leading-relaxed">
+            Hey, I'm Georgios, certified personal trainer with 10+ years in combat sports, weightlifting, plyometrics, mobility, speed, endurance and explosive training.<br />
+
+            I’ve coached top-level athletes, older adults rebuilding their movement, and kids gaining confidence. No matter who you are, my focus is always the same: train smart, stay functional, and avoid injury.<br />
+
+            I believe training should be fun, simple, and something you actually look forward to, not just another chore.<br />
+
+            My goal? To help you become stronger, faster, and more mobile, in a sustainable way. I’ll meet you where you’re at, and we’ll level up together.<br /><br />
+
+            <span className="block text-2xl font-bold italic text-mainAccent">
+              Love the progress, and the results will come.
+            </span>
+          </p>
         </div>
         
          {/* Image Section */}
