@@ -4,9 +4,10 @@ import { maxSM, maxMD, maxLG } from "./utils/reusableFuntions";
 import { useGlobalProps } from "./components/GlobalPropsProvider";
 import Chat from "./components/AI/Chat";
 import { TestHeadless, Programs, ProgramDetails, Navbar, MobileNavbar, Hero } from "./components/exportComponents";
+import SignIn from "./Auth/SignIn";
 
 function App() {
-  const { setMobileMenuOpen } = useGlobalProps();
+  const { setMobileMenuOpen, signInOpen, setSignInOpen } = useGlobalProps();
 
   // ------------------ Screen Sizes ------------------ //
   const [smallScreen, setSmallScreen] = useState(false);
@@ -33,6 +34,8 @@ function App() {
   return (
     <>
       {mediumScreen ? <MobileNavbar /> : <Navbar />}
+      {signInOpen && <SignIn/>}
+
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/all-training-programs" element={<Programs />} />
@@ -52,7 +55,6 @@ function App() {
 export default App;
 
 // TO DO! 
-// DO SO THAT CONTACT FORM SENDS MES AN EMAIL 
 // CREATE A SIGN UP PAGE 
 
 // WHEN USER IS SIGNUP CAN BOOK A DATE FOR CONSULT AND A 

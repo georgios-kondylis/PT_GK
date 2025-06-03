@@ -3,8 +3,12 @@ import { NavLink } from "react-router-dom";
 import { navlinks } from "../../utils/utils";
 import { useLocation } from "react-router-dom";
 import MainButton from "../UI/MainButton";
+import { useGlobalProps } from "../GlobalPropsProvider";
+import SignIn from "../../Auth/SignIn";
 
 const Navbar = () => {
+  const { signInOpen, setSignInOpen } = useGlobalProps();
+
   const location = useLocation();
   const [scrollDown, setScrollDown] = useState(false);
 
@@ -44,7 +48,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            <MainButton size="medium">Sign In</MainButton>
+            <MainButton onClick={() => setSignInOpen(prev => !prev)} size="medium">Sign In</MainButton>
           </nav>
         </header>
       )}
