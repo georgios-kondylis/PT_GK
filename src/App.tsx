@@ -5,9 +5,14 @@ import { useGlobalProps } from "./components/GlobalPropsProvider";
 import Chat from "./components/AI/Chat";
 import { TestHeadless, Programs, ProgramDetails, Navbar, MobileNavbar, Hero } from "./components/exportComponents";
 import SignIn from "./Auth/SignIn";
+import SignUp from "./Auth/SignUp";
 
 function App() {
-  const { setMobileMenuOpen, signInOpen, setSignInOpen } = useGlobalProps();
+  const { 
+    setMobileMenuOpen,
+    signInOpen,
+    signUpOpen,
+  } = useGlobalProps();
 
   // ------------------ Screen Sizes ------------------ //
   const [smallScreen, setSmallScreen] = useState(false);
@@ -35,6 +40,7 @@ function App() {
     <>
       {mediumScreen ? <MobileNavbar /> : <Navbar />}
       {signInOpen && <SignIn/>}
+      {signUpOpen && <SignUp/>}
 
       <Routes>
         <Route path="/" element={<Hero />} />

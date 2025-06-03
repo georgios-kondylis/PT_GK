@@ -48,7 +48,9 @@ const Navbar = () => {
               ))}
             </div>
 
-            <MainButton onClick={() => setSignInOpen(prev => !prev)} size="medium">Sign In</MainButton>
+            <MainButton onClick={() => setSignInOpen(prev => !prev)} size="medium">
+              LOGIN
+            </MainButton>
           </nav>
         </header>
       )}
