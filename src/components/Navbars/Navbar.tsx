@@ -5,9 +5,27 @@ import { useLocation } from "react-router-dom";
 import MainButton from "../UI/MainButton";
 import { useGlobalProps } from "../GlobalPropsProvider";
 import SignIn from "../../Auth/SignIn";
+import { userTypes } from "../../utils/types";
 
 const Navbar = () => {
-  const { signInOpen, setSignInOpen } = useGlobalProps();
+  const { signInOpen, setSignInOpen, newRefresh, REFRESH } = useGlobalProps();
+  const [user, setUser] = useState<userTypes | null>(null);
+  const [userHovered, setUserHovered] = useState<boolean>(false);
+  
+
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("user");
+    if (storedUser) {
+      try {
+        const parsedUser: userTypes = JSON.parse(storedUser);
+        setUser(parsedUser);
+        console.log(parsedUser)
+      } catch (error) {
+        console.error("Failed to parse user from sessionStorage:", error);
+      }
+    }
+  }, [signInOpen, REFRESH]);
+
 
   const location = useLocation();
   const [scrollDown, setScrollDown] = useState(false);
@@ -37,7 +55,7 @@ const Navbar = () => {
               <img className="w-[250px] mb-[3px]" src="/images/mw.png" alt="" />
             </NavLink>
 
-            <div className="absolute left-1/2 -translate-x-1/2  flex items-center gap-[20px]">
+            <div id="NavLinks" className="absolute left-1/2 -translate-x-1/2  flex items-center gap-[20px]">
               {navlinks.map((link, i) => (
                 <a key={i}
                   href={link.scrollPoint}
@@ -48,9 +66,31 @@ const Navbar = () => {
               ))}
             </div>
 
+            {user?
+             <div className="relative py-3 pl-4 flex items-center gap-2 cursor-pointer text-[#d2d2d2] hover:text-white group"
+                  onMouseEnter={() => setUserHovered(true)}
+                  onMouseLeave={() => setUserHovered(false)}
+                  onClick={() => {
+                    sessionStorage.removeItem('user');
+                    sessionStorage.removeItem('token');
+                    setUser(null);
+                    newRefresh();
+                  }}>
+              <p className="font-light pt-1 "> 
+               {userHovered ? 'LOGOUT' : user.firstName.toLocaleUpperCase()}
+              </p>
+              {userHovered ? 
+              <i className="text-[23px] fa-solid fa-arrow-right-from-bracket"></i>
+              : 
+               <img className="w-[35px] group-hover:bg-black rounded-full transition1" src="/icons/user.png" alt="" />
+               }
+            </div> 
+            :
             <MainButton onClick={() => setSignInOpen(prev => !prev)} size="medium">
               LOGIN
             </MainButton>
+             }
+             
           </nav>
         </header>
       )}
@@ -59,23 +99,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  /* Links */
-}
-{
-  /* <div className="flex items-center gap20px">
-        {navlinks.map((link, i) => (
-          <NavLink key={i} to={link.path} className={({ isActive }) => `transition1 font-light text-[14px] txtShadow
-            ${isActive
-                ? "text-[white] scale-[1.1] translate-y-[-1px]"
-                : "text-[#d2d2d2] hover:text-[#ffffff]"
-            }`}>
-            {link.name.toLocaleUpperCase()}
-          </NavLink>
-        ))}
-      </div> */
-}
-{
-  /* Links */
-}

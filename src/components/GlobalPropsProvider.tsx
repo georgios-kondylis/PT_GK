@@ -9,6 +9,8 @@ type GlobalProps = {
   setSignInOpen: React.Dispatch<SetStateAction<boolean>>
   signUpOpen: boolean;
   setSignUpOpen: React.Dispatch<SetStateAction<boolean>>
+  newRefresh: () => void;
+  REFRESH: boolean;
 };
 
 // 2. Create context with default (fallback) value
@@ -16,15 +18,21 @@ const GlobalContext = createContext<GlobalProps | undefined>(undefined);
 
 // 3. Provider component
 export const GlobalPropsProvider = ({ children }: { children: ReactNode }) => {
+  const [REFRESH, setREFRESH] = useState<boolean>(false);
+  const newRefresh = () => setREFRESH(prev => !prev);
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [signInOpen, setSignInOpen] = useState<boolean>(false)
   const [signUpOpen, setSignUpOpen] = useState<boolean>(false)
   const toggleMobileMenuOpen = () => setMobileMenuOpen((prev) => !prev);
+ 
+
 
   return (
     <GlobalContext.Provider value={{ mobileMenuOpen, toggleMobileMenuOpen, setMobileMenuOpen,
-      signInOpen, setSignInOpen, signUpOpen, setSignUpOpen
-      
+      signInOpen, setSignInOpen, signUpOpen, setSignUpOpen,
+      newRefresh, REFRESH,
+  
     }}>
       {children}
     </GlobalContext.Provider>
