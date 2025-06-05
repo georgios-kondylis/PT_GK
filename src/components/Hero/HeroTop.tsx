@@ -19,7 +19,7 @@ const HeroTop = () => {
   };
 
   return (
-    <section id='home' className="bg-[url('/images/bg.png')] bg-cover bg-center h-screen pt-[60px] mainPX text-white relative">
+    <section id='home' className="bg-[url('/images/bg.png')] bg-cover bg-top h-screen pt-[60px] mainPX text-white relative">
       <div className="MAX_W mx-auto h-full flex gap20px flex-col items-center justify-center text-center">
         <header className="text-[4rem] font-bold tracking-wide txtShadow">
           Stronger Healthier Happier
