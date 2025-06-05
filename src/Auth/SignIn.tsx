@@ -108,11 +108,6 @@ const SignIn = () => {
                 <p className='text-[18px]'>Google</p>
               </a>
             </button>
-
-            <button className='flex items-center gap-2 border px-2 py-1 rounded-md hover:shadow-md hover:scale-105 transition1'>
-              <i className="text-[20px] text-[blue] fa-brands fa-facebook"></i>
-              <p className='text-[18px]'>Facebook</p>
-            </button>
           </div>
 
           <p className='text-[gray] text-[14px] mt-[20px]'>Don't have an account?</p>

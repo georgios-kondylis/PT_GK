@@ -38,8 +38,6 @@ createRoot(container).render(
 
 // Name: e.g. PTGK App Google Login
 
-// Client ID: 1071246617977-kaddod2vje3s7l1h8bbfn4hefqu37o8u.apps.googleusercontent.com
-// Client secret: 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
 // Creation date
 // 5 June 2025 at 13:37:00 GMT+2
 // Status

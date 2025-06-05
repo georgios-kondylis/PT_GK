@@ -82,7 +82,7 @@ const Navbar = () => {
               {userHovered ? 
               <i className="text-[23px] fa-solid fa-arrow-right-from-bracket"></i>
               : 
-               <img className="w-[35px] group-hover:bg-black rounded-full transition1" src="/icons/user.png" alt="" />
+               <img className="w-[35px] group-hover:bg-black rounded-full transition1" src={user.image} alt="" />
                }
             </div> 
             :
