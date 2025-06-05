@@ -6,6 +6,7 @@ import Chat from "./components/AI/Chat";
 import { TestHeadless, Programs, ProgramDetails, Navbar, MobileNavbar, Hero } from "./components/exportComponents";
 import SignIn from "./Auth/SignIn";
 import SignUp from "./Auth/SignUp";
+import GoogleSuccess from "./components/GoogleSuccess";
 
 function App() {
   const { 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/all-training-programs" element={<Programs />} />
         <Route path="/test" element={<TestHeadless />} />
         <Route path="/programs/:name" element={<ProgramDetails />} />
+        <Route path="/google-success" element={<GoogleSuccess />} /> 
       </Routes>
 
       <div className="fixed bottom-[60px] left-1/2 transform -translate-x-1/2 w-full MAX_W px-[30px] max-sm:px-[15px] z-50 pointer-events-none">

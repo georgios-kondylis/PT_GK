@@ -3,9 +3,70 @@ import express from 'express';
 import User from './userSchemma.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import passport from 'passport';
 
 const router = express.Router();
 
+// ----------------- GOOGLE ROUTES ----------------- //
+
+// Start Google login flow
+// http://localhost:3000/user/auth/google
+router.get('/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email'],
+  })
+);
+
+// Callback route after Google login
+router.get('/auth/google/callback',
+  passport.authenticate('google', { session: false }),
+  async (req, res) => {
+    try {
+      const googleUser = req.user;
+
+      // Check if user already exists by email
+      let user = await User.findOne({ email: googleUser.email });
+
+      // If not, create a new one
+      if (!user) {
+        user = new User({
+          firstName: googleUser.name.split(' ')[0],
+          lastName: googleUser.name.split(' ').slice(1).join(' ') || '',
+          email: googleUser.email,
+          image: googleUser.image
+          // ⚠️ No password since it's a Google login
+        });
+
+        await user.save();
+      }
+
+      // Sign token using MongoDB _id
+      const token = jwt.sign(
+        { userId: user._id },
+        process.env.JWT_SECRET,
+        { expiresIn: '1h' }
+      );
+
+      // Redirect to frontend with token and user data
+     const redirectURL = new URL('http://localhost:5173/google-success');
+      redirectURL.searchParams.append('token', token);
+      redirectURL.searchParams.append('_id', user._id.toString());
+      redirectURL.searchParams.append('firstName', user.firstName);
+      redirectURL.searchParams.append('lastName', user.lastName);
+      redirectURL.searchParams.append('email', user.email);
+      redirectURL.searchParams.append('image', user.image || '');
+
+      res.redirect(redirectURL.toString());
+
+
+    } catch (error) {
+      console.error('Google auth error:', error);
+      res.status(500).json({ message: 'Google authentication failed' });
+    }
+  }
+);
+
+// ----------------- GOOGLE ROUTES END ----------------- //
 
 // --------------- SIGN-UP --------------- //
 router.post('/sign-up', async (req, res) => {
@@ -85,74 +146,5 @@ router.get('/', async (req, res) => {
   }
 });
 
-// DELETE: Delete a user by ID and their review
-// router.delete('/:id', async (req, res) => {
-//   try {
-//     const userId = req.params.id;
-
-//     // First, delete the review(s) linked to this user
-//     await Review.deleteMany({ userId });
-
-//     // Then delete the user
-//     const deletedUser = await User.findByIdAndDelete(userId);
-
-//     if (!deletedUser) {
-//       return res.status(404).json({ message: 'User not found' });
-//     }
-
-//     res.status(200).json({ message: 'User and associated review(s) deleted successfully' });
-//   } catch (error) {
-//     console.error('Error deleting user and review:', error);
-//     res.status(500).json({ message: 'Server error' });
-//   }
-// });
-
-
-// // PUT: Update user info
-// router.put('/update', upload.single('image'), async (req, res) => {
-//   try {
-//     const { userId, firstName, lastName, email, password, prevPassword } = req.body;
-
-//     const user = await User.findById(userId);
-//     if (!user) return res.status(404).json({ message: 'User not found' });
-
-//     const isPasswordCorrect = await bcrypt.compare(prevPassword, user.password);
-//     if (!isPasswordCorrect) return res.status(400).json({ message: 'Old password is incorrect' });
-
-//     let hashedPassword = user.password;
-//     if (password) hashedPassword = await bcrypt.hash(password, 10);
-
-//     let imageUrl = user.image;
-//     if (req.file) {
-//       const streamUpload = () => {
-//         return new Promise((resolve, reject) => {
-//           const stream = cloudinary.uploader.upload_stream(
-//             { folder: 'user_profiles' },
-//             (error, result) => {
-//               if (result) resolve(result);
-//               else reject(error);
-//             }
-//           );
-//           streamifier.createReadStream(req.file.buffer).pipe(stream);
-//         });
-//       };
-
-//       const result = await streamUpload();
-//       imageUrl = result.secure_url;
-//     }
-
-//     const updatedUser = await User.findByIdAndUpdate(
-//       userId,
-//       { firstName, lastName, email, password: hashedPassword, image: imageUrl },
-//       { new: true }
-//     );
-
-//     return res.status(200).json({ user: updatedUser });
-//   } catch (error) {
-//     console.error('Error updating profile:', error);
-//     return res.status(500).json({ message: 'Server error' });
-//   }
-// });
 
 export default router;
-// add
