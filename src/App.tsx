@@ -6,13 +6,16 @@ import Chat from "./components/AI/Chat";
 import { TestHeadless, Programs, ProgramDetails, Navbar, MobileNavbar, Hero } from "./components/exportComponents";
 import SignIn from "./Auth/SignIn";
 import SignUp from "./Auth/SignUp";
-import GoogleSuccess from "./components/GoogleSuccess";
+import GoogleSuccess from "./Auth/GoogleSuccess";
+import LogoutModal from "./Auth/LogoutModal";
 
 function App() {
   const { 
     setMobileMenuOpen,
     signInOpen,
     signUpOpen,
+    logoutModalIsOPen,
+    user, setUser
   } = useGlobalProps();
 
   // ------------------ Screen Sizes ------------------ //
@@ -42,6 +45,7 @@ function App() {
       {mediumScreen ? <MobileNavbar /> : <Navbar />}
       {signInOpen && <SignIn/>}
       {signUpOpen && <SignUp/>}
+      {logoutModalIsOPen && <LogoutModal />}
 
       <Routes>
         <Route path="/" element={<Hero />} />

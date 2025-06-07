@@ -23,7 +23,7 @@ connectToMongoDB();
 app.use('/user', userRoutes);
 
 // Optional: expose Google auth at root level too
-app.use('/auth', userRoutes); // now supports /auth/google and /auth/google/callback
+// app.use('/auth', userRoutes); // now supports /auth/google and /auth/google/callback
 
 // Start server
 app.listen(PORT, () => {

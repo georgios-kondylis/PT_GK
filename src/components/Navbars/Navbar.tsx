@@ -8,24 +8,8 @@ import SignIn from "../../Auth/SignIn";
 import { userTypes } from "../../utils/types";
 
 const Navbar = () => {
-  const { signInOpen, setSignInOpen, newRefresh, REFRESH } = useGlobalProps();
-  const [user, setUser] = useState<userTypes | null>(null);
-  const [userHovered, setUserHovered] = useState<boolean>(false);
-  
-
-  useEffect(() => {
-    const storedUser = sessionStorage.getItem("user");
-    if (storedUser) {
-      try {
-        const parsedUser: userTypes = JSON.parse(storedUser);
-        setUser(parsedUser);
-        console.log(parsedUser)
-      } catch (error) {
-        console.error("Failed to parse user from sessionStorage:", error);
-      }
-    }
-  }, [signInOpen, REFRESH]);
-
+  const { setSignInOpen, setLogoutModalIsOpen, user } = useGlobalProps();
+  const [profOptionsOpen, setProfOptionsOpen] = useState(false);
 
   const location = useLocation();
   const [scrollDown, setScrollDown] = useState(false);
@@ -42,8 +26,7 @@ const Navbar = () => {
   return (
     <>
       {location.pathname === "/" && (
-        <header
-          className={`fixed w-full flex justify-center mainPX transition2 z-50
+        <header className={`fixed w-full flex justify-center mainPX transition2 z-50
           ${ scrollDown
               ? "mainDarkBg shadow-[0_0_10px_#070707]"
               : "bg-transparent"
@@ -57,40 +40,40 @@ const Navbar = () => {
 
             <div id="NavLinks" className="absolute left-1/2 -translate-x-1/2  flex items-center gap-[20px]">
               {navlinks.map((link, i) => (
-                <a key={i}
-                  href={link.scrollPoint}
+                <a key={i} href={link.scrollPoint}
                   className={`transition1 font-light text-[14px] txtShadow text-[#d2d2d2] hover:text-white hover:scale-[1.05] hover:-translate-y-[1px]`}
-                >
+                 >
                   {link.name.toUpperCase()}
                 </a>
               ))}
             </div>
 
-            {user?
-             <div className="relative py-3 pl-4 flex items-center gap-2 cursor-pointer text-[#d2d2d2] hover:text-white group"
-                  onMouseEnter={() => setUserHovered(true)}
-                  onMouseLeave={() => setUserHovered(false)}
-                  onClick={() => {
-                    sessionStorage.removeItem('user');
-                    sessionStorage.removeItem('token');
-                    setUser(null);
-                    newRefresh();
-                  }}>
-              <p className="font-light pt-1 "> 
-               {userHovered ? 'LOGOUT' : user.firstName.toLocaleUpperCase()}
-              </p>
-              {userHovered ? 
-              <i className="text-[23px] fa-solid fa-arrow-right-from-bracket"></i>
-              : 
-               <img className="w-[35px] group-hover:bg-black rounded-full transition1" src={user.image} alt="" />
-               }
-            </div> 
-            :
-            <MainButton onClick={() => setSignInOpen(prev => !prev)} size="medium">
+           {user ? (
+            <div className={`relative py-2 px-2 flex items-center gap-2 cursor-pointer text-[#d2d2d2] hover:text-white group hover:bg-mainLightDark
+              ${profOptionsOpen ? "bg-mainLightDark rounded-t-md" : "rounded-md"}`}
+              onClick={() => setProfOptionsOpen(prev => !prev)}
+            >
+              <p className="text-[14px] font-light txtShadow">{user.firstName.toUpperCase()}</p>
+              <img className="w-[30px] h-[30px] object-cover rounded-full group-hover:bg-black transition1"
+                src={user.image} alt="User"
+              />
+
+              {/* Profile DropDown */}
+              {profOptionsOpen && (
+                <div className="absolute right-0 bottom-[-40px] mt-[2px] flex items-center justify-between gap-3 text-white hover:text-[#da3f3f] bg-mainLightDark p-2 rounded-b-md border-t border-[#9f9f9fae] w-full min-w-[120px]"
+                  onClick={() => setLogoutModalIsOpen(true)}
+                >
+                  <p>Logout</p>
+                  <i className="fa-solid fa-right-from-bracket"></i>
+                </div>
+              )}
+            </div>
+          ) : (
+            <MainButton onClick={() => setSignInOpen((prev) => !prev)} size="small">
               LOGIN
             </MainButton>
-             }
-             
+          )}
+
           </nav>
         </header>
       )}

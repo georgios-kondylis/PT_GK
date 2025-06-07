@@ -2,10 +2,13 @@ import React, { useRef } from "react";
 import { trainingPrograms } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
 import MainButton from "../UI/MainButton";
+import { scrollUp } from "../../utils/reusableFuntions";
 
 const Programs = () => {
+  scrollUp()
   // Store refs for each video
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  
 
   const handleMouseEnter = (index: number) => {
     const video = videoRefs.current[index];
