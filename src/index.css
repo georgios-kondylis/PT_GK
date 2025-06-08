@@ -68,3 +68,15 @@ html { scroll-behavior: smooth;}
 
 .caligraphy { font-family: 'Marck Script', cursive;}
 .headerStyles { @apply font-bold text-[2rem] py-[20px] mt-[30px] mx-auto}
+
+
+.highlight-today {
+  background-color: #019fee !important; /* red-400 */
+  color: white !important;
+  border-radius: 5px ;
+}
+.highlight-selected {
+  background-color: #ff5b2d !important; /* red-400 */
+  color: white !important;
+  border-radius: 5px ;
+}

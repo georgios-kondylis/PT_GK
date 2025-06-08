@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import CountUp from 'react-countup';
 import CalendarSection from './CallendarSection';
+import { useGlobalProps } from '../GlobalPropsProvider';
 
 const HeroTop = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const { user, setSignInOpen } = useGlobalProps();
 
   const handleConfirm = () => {
     if (selectedDate && selectedTime) {
@@ -30,7 +32,9 @@ const HeroTop = () => {
         </p>
 
         <div className="flex gap20px justify-center">
-          <button className="BUTTON" onClick={() => setShowCalendar(true)}>
+          <button className="BUTTON" onClick={() => {
+           user?  setShowCalendar(true) : setSignInOpen(true)}}
+          >
             Book Free Consult
           </button>
           <a href='#contact' className="bg-transparent border-[2px] border-white text-white px-6 py-3 rounded-[8px] hover:bg-white hover:text-[#2A2A2A] transition1">

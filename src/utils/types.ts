@@ -1,3 +1,5 @@
+import { SetStateAction } from "react";
+
 export type formInfoTypes = {
   firstName: string;
   lastName: string;
@@ -12,4 +14,14 @@ export type userTypes = {
   email: string;
   image?: string;
   _id: string;
+}
+
+
+export type CalendarSectionProps = {
+  selectedDate: Date | null;
+  setSelectedDate: (date: Date) => void;
+  selectedTime: string | null;
+  setSelectedTime: (time: string) => void;
+  handleConfirm: () => void;
+  closeCalendar: () => void;
 }

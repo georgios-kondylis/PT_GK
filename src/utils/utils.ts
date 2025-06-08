@@ -168,3 +168,20 @@ With over 10 years of experience in combat sports, weightlifting, plyometrics, m
 My training philosophy is simple no matter your goal, the focus should always be on staying functional, healthy, and injury-free. Training should be sustainable, fun, and something you actually look forward to, not just another chore.
 My goal? To help you become the strongest, fastest, most mobile version of yourself, without overcomplicating things. I keep it real, I show up, and I’ve got your back every step of the way.
 Whether you're just starting out or pushing for elite performance, I’ll meet you where you're at, and we’ll level up together. Let’s go.`;
+
+
+// 🧠 Default time slots for dates not explicitly defined for the <CallendarSection/> component
+export const defaultTimeSlots = ['11:00 - 11:30', '11:30 - 12:00', '12:00 - 12:30', '12:30 - 13:00'];
+
+// 🗓️ Custom time slots per specific date (yyyy-mm-dd) for the <CallendarSection/> component
+export const timeSlotsByDate: { [key: string]: string[] } = {
+  '2025-06-09': ['10:00 - 10:30', '14:00 - 14:30'],
+  '2025-06-10': ['12:00 - 12:30', '13:00 - 13:30', '15:00 - 15:30'],
+  '2025-06-11': ['09:00 - 09:30', '17:00 - 17:30'],
+  '2025-06-14': ['10:00 - 10:30', '10:30 - 11:00', '11:00 - 11:30'],
+  '2025-06-15': ['10:00 - 10:30', '10:30 - 11:00', '11:00 - 11:30'],
+  '2025-06-16': ['10:00 - 10:30', '10:30 - 11:00', '11:00 - 11:30'],
+  '2025-06-19': ['12:00 - 12:30', '13:00 - 13:30', '15:00 - 15:30'],
+  '2025-06-20': ['09:00 - 09:30', '17:00 - 17:30'],
+  '2025-06-25': ['10:00 - 10:30','12:00 - 12:30', '13:00 - 13:30',],
+};
