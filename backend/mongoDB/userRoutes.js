@@ -49,7 +49,7 @@ router.get('/auth/google/callback',
       );
 
       // Redirect to frontend with token and user data
-      const redirectURL = new URL(`https://pt-gk.vercel.app//google-succes`);
+      const redirectURL = new URL(`https://pt-gk.vercel.app/google-succes`);
       redirectURL.searchParams.append('token', token);
       redirectURL.searchParams.append('_id', user._id.toString());
       redirectURL.searchParams.append('firstName', user.firstName);
