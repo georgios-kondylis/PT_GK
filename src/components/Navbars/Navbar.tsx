@@ -60,7 +60,8 @@ const Navbar = () => {
 
               {/* Profile DropDown */}
               {profOptionsOpen && (
-                <div className="absolute right-0 bottom-[-40px] mt-[2px] flex items-center justify-between gap-3 text-white hover:text-[#da3f3f] bg-mainLightDark p-2 rounded-b-md border-t border-[#9f9f9fae] w-full min-w-[120px]"
+                <div className="absolute w-full right-0 bottom-[-40px] mt-[2px] flex items-center justify-between gap-3 text-white hover:text-[#da3f3f] bg-mainLightDark p-2 rounded-b-md border-t border-[#9f9f9fae]
+                 min-w-[60px]"
                   onClick={() => setLogoutModalIsOpen(true)}
                 >
                   <p>Logout</p>
