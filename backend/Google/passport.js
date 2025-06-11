@@ -21,3 +21,6 @@ passport.use(new GoogleStrategy({
   // 🔥 You can save the user to MongoDB here if needed
   return done(null, user);
 }));
+
+// OLD URL http://localhost:3000/user/auth/google
+// NEW URL https://pt-gk.onrender.com/user/auth/google

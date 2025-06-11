@@ -104,7 +104,7 @@ const SignIn = () => {
           <div className='flex items-center gap20px'>
             <button className='flex items-center gap-2 border px-2 py-1 rounded-md hover:shadow-md hover:scale-105 transition1'>
               <img className='w-[20px]' src="/icons/googleLogo.png" alt="" />
-              <a href="http://localhost:3000/user/auth/google"> 
+              <a href="https://pt-gk.onrender.com/user/auth/google"> 
                 <p className='text-[18px]'>Google</p>
               </a>
             </button>
