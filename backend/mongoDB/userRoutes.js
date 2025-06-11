@@ -49,7 +49,7 @@ router.get('/auth/google/callback',
       );
 
       // Redirect to frontend with token and user data
-      const redirectURL = new URL(`https://pt-gk.vercel.app/google-success`);
+      const redirectURL = new URL(`http://localhost:5173/google-succes`);
       redirectURL.searchParams.append('token', token);
       redirectURL.searchParams.append('_id', user._id.toString());
       redirectURL.searchParams.append('firstName', user.firstName);
@@ -105,9 +105,17 @@ router.post('/login', async (req, res) => {
 
     const user = await User.findOne({ email }).select("firstName lastName email password image");
 
-    if (!user) { return res.status(400).json({ message: 'Invalid credentials' }); }
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid credentials' });
+    }
+
+    // ✅ Check if password exists (for Google users, it may not)
+    if (!user.password) {
+      return res.status(400).json({ message: 'Please log in using Google' });
+    }
 
     const isMatch = await bcrypt.compare(password, user.password);
+
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
@@ -134,6 +142,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
+
 // --------------- LOG-IN | SIGN-UP END --------------- //
 
 // GET: Get all users
