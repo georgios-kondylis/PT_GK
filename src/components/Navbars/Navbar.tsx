@@ -4,8 +4,6 @@ import { navlinks } from "../../utils/utils";
 import { useLocation } from "react-router-dom";
 import MainButton from "../UI/MainButton";
 import { useGlobalProps } from "../GlobalPropsProvider";
-import SignIn from "../../Auth/SignIn";
-import { userTypes } from "../../utils/types";
 
 const Navbar = () => {
   const { setSignInOpen, setLogoutModalIsOpen, user } = useGlobalProps();
