@@ -75,7 +75,7 @@ const Chat = () => {
                  : 
                   <i className="fa-solid fa-circle-user | text-[27px] text-[#b6b6b6]"></i>
                 }
-                <div className={`border w-[100%] overflow-hidden px-[10px] py-[5px] rounded-md bg-mainLightDark text-wrap break-words ${
+                <div className={`w-[100%] overflow-hidden px-[10px] py-[5px] rounded-md bg-mainLightDark text-wrap break-words ${
                      msg.role === 'user' ? 'text-right' : 'text-left self-start' }`}
                 >
                   {msg.content}
