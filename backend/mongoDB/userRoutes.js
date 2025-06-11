@@ -11,6 +11,7 @@ const router = express.Router();
 
 // Start Google login flow
 // http://localhost:3000/user/auth/google
+// https://pt-gk.onrender.com/user/auth/google
 router.get('/auth/google',
   passport.authenticate('google', {
     scope: ['profile', 'email'],

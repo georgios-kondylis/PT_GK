@@ -9,7 +9,7 @@ import passport from 'passport';
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -29,3 +29,6 @@ app.use('/user', userRoutes);
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
+
+//https://pt-gk.onrender.com
