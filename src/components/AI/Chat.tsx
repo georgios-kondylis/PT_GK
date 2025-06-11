@@ -44,7 +44,8 @@ const Chat = () => {
       {!chatIsOpen && <ChatIcon setChatIsOpen={setChatIsOpen} />}
 
       {chatIsOpen && (
-        <div className={`h-[500px] ${loading ? 'border-mainOrange' : 'border-mainLightDark' } border-[2px] w-[400px] bottom-[0px] left-[30px] fixed mainDarkBg rounded-[20px] flex flex-col p-[15px] shadow-lg pointer-events-auto transition2`}>
+        <div className={`h-[500px] ${loading ? 'border-mainOrange' : 'border-mainLightDark' } border-[2px] w-[400px] bottom-[0px] left-[30px] fixed mainDarkBg rounded-[20px] flex flex-col p-[15px] shadow-lg pointer-events-auto transition2
+                        max-md:w-[85%] max-md:left-1/2 max-md:translate-x-[-50%] overflow-x-hidden`}>
           <CloseChatIcon setChatIsOpen={setChatIsOpen} />
 
          {messages.length === 0 && (
@@ -74,11 +75,12 @@ const Chat = () => {
                  : 
                   <i className="fa-solid fa-circle-user | text-[27px] text-[#b6b6b6]"></i>
                 }
-                <div className={`w-[100%] px-[10px] py-[5px] rounded-md bg-mainLightDark ${
-                    msg.role === 'user' ? 'text-right' : 'text-left self-start' }`}
+                <div className={`border w-[100%] overflow-hidden px-[10px] py-[5px] rounded-md bg-mainLightDark text-wrap break-words ${
+                     msg.role === 'user' ? 'text-right' : 'text-left self-start' }`}
                 >
                   {msg.content}
                 </div>
+
               </div>
             ))}
             {loading && ( <div className="text-gray-400 italic">AI is typing...</div> )}

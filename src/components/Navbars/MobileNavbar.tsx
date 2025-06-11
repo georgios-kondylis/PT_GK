@@ -4,7 +4,6 @@ import { navlinks } from "../../utils/utils";
 import { useGlobalProps } from "../GlobalPropsProvider";
 import { userTypes } from "../../utils/types";
 import MainButton from "../UI/MainButton";
-import LogoutModal from "../../Auth/LogoutModal";
 
 const MobileNavbar = () => {
   const {
@@ -96,7 +95,7 @@ const MobileNavbar = () => {
         />
       )}
 
-      <aside className={`fixed top-0 right-0 h-screen w-[40%] max-w-[300px] min-w-[220px] bg-mainDark flex flex-col items-start mainPX pt-[20px] gap-[20px] z-50 shadow-2xl transitio1
+      <aside className={`fixed top-0 right-0 h-screen w-[40%] max-w-[300px] min-w-[220px] bg-mainDark flex flex-col items-start mainPX pt-[20px] gap-[20px] z-50 shadow-2xl transition1
              ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`} >
 
         <div className="w-full flex items-center justify-between px-2">
