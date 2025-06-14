@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { reviews } from "../../utils/utils";
 import ReviewCard from "./ReviewCard";
-import { AnimatePresence, motion, Variant, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants, useInView } from "framer-motion";
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [direction, setDirection] = useState(0);
 
   const handlePrev = () => {
     setDirection(-1);
@@ -39,23 +39,34 @@ const Reviews = () => {
     }),
   };
 
+  // 🔥 Scroll animation setup
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  const fadeUpVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section
-      id="reviews"
-      className="text-white mainDarkBg bg-cover bg-center w-full py-[30px]"
+    <section id="reviews" className="text-white mainDarkBg bg-cover bg-center w-full py-[30px]"
     >
-      <div className="flex flex-col MAX_W mainPX mx-auto">
-        <header className="headerStyles">
-          AMAZING SUCCESS STORIES
-        </header>
+      <motion.div ref={ref}
+        variants={fadeUpVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className="flex flex-col MAX_W mainPX mx-auto"
+      >
+        <header className="headerStyles">AMAZING SUCCESS STORIES</header>
 
         <div className="flex gap-4 justify-between items-center relative min-h-[300px]">
-          <i
-            onClick={handlePrev}
-            className="fa-solid fa-circle-arrow-left
-            text-[40px] rounded-full transition1 cursor-pointer z-10 bg-[#151515] hover:scale-[1.1] hover:text-[#d1d1d1]
-             max-sm:absolute left-0 top-[30%]"
-          ></i>
+          <i onClick={handlePrev}
+             className="fa-solid fa-circle-arrow-left text-[40px] rounded-full transition1 cursor-pointer z-10 bg-[#151515] hover:scale-[1.1] hover:text-[#d1d1d1] max-sm:absolute left-0 top-[30%]">
+          </i>
 
           <div className="w-full flex justify-center relative overflow-hidden">
             <AnimatePresence custom={direction} mode="wait">
@@ -72,14 +83,11 @@ const Reviews = () => {
             </AnimatePresence>
           </div>
 
-          <i
-            onClick={handleNext}
-            className="fa-solid fa-circle-arrow-right
-            text-[40px] rounded-full transition1 cursor-pointer z-10 bg-[#151515] hover:scale-[1.1] hover:text-[#d1d1d1]
-            max-sm:absolute right-0 top-[30%]"
-          ></i>
+          <i onClick={handleNext}
+             className="fa-solid fa-circle-arrow-right text-[40px] rounded-full transition1 cursor-pointer z-10 bg-[#151515] hover:scale-[1.1] hover:text-[#d1d1d1] max-sm:absolute right-0 top-[30%]">
+          </i>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
