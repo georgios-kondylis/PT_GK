@@ -27,7 +27,8 @@ const Programs = () => {
 
   const navigate = useNavigate();
   return (
-    <section className="mainDarkBg text-white">
+    <section className="mainDarkBg text-white w-full flex justify-center min-h-screen">
+      <div className="w-full MAX_W">
       <div id="GO_BACK" className="flex w-full justify-start p-[30px]">
         <MainButton size="medium" className="flex items-center gap-2" onClick={() => navigate(-1)}>
           <i className="fa-solid fa-arrow-left"></i>
@@ -90,6 +91,7 @@ const Programs = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
